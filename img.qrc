@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>Assets/fullscreen.png</file>
+    <file>Assets/minimize.png</file>
+    <file>Assets/X.png</file>
+  </qresource>
+</RCC>

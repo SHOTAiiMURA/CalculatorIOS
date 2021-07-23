@@ -1,0 +1,56 @@
+This is a Calculator project file.
+
+###############
+####Test#######
+###############
+Try Executing main.pyw file in the folder
+
+To test the project file, first try to download PyQt5 in Python
+
+
+If you are using PyCharm,
+
+	Mac Users) Click PyCharm in Menu and locate preference. 
+	Go to search box and search project interpreter
+	And click + or add mark to add new library. 
+	Search PyQt5
+	install it
+
+
+	Windows) Click File in menu bar
+	Go to setting (Ctr + Alt + S)
+	Go to search box and search project interpreter
+	And click + or add mark to add new library. 
+	Search PyQt5
+	install it
+
+
+if you are not using PyCharm
+	
+	Go to Command Line in Windows or Terminal in Mac
+	use pip command to install it
+	or just try below command 
+	pip install pyqt5
+	if pip command does not work or cannot uses command prompt, then ask me for a help.
+
+
+if you could download pyqt5 library or already installed
+then try executing the main.pyw file and see if it works
+
+
+if you want to add functions to the project,
+
+open UI_main file and start adding functions to the buttons.
+
+if you want to change UI please go to down below website and download designer
+
+		https://build-system.fman.io/qt-designer-download
+
+choose your OS and download it
+
+How to make ui, check down below UI video made by me(Keita).
+
+		https://drive.google.com/file/d/1m1MnObOHNtQGDCec23QrBg5UqlPaJ5Wj/view?usp=sharing
+
+If you have any problem contact me via Line or Email (tun05036@temple.edu)
+
