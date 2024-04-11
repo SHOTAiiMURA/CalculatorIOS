@@ -66,76 +66,49 @@ class Ui_Functions():
         # add decimal point to the self.number
         self.ui.dp_button.clicked.connect(self.decimal_clicked)
 
+    def print_inside(self):
+        print(f"self.number -> {self.number}")
+        print(f"self.subLine_number -> {self.subLine_number}")
+        print(f"self.subline_action -> {self.subline_action}")
     #######################
     # functions for slots
     #######################
 
+    def update_number(self):
+        self.ui.display_textLine.setText(str(self.number))
+
+    def update_subline(self):
+        self.ui.display_textSubLine.setText(str(self.subLine_number) + str(self.subline_action))
+
     # Define actions when one of keypad is pressed.
     def keypad_pressed(self, number):
-        # after decimal number is pressed, just append inputted number to the text displayed in main display
-        if self.decimal_on:
-            # get text
-            text = self.ui.display_textLine.text()
-            print(text + str(number))
-            # append number
-            self.ui.number = float(text + str(number))
+        print(f"keypad_pressed -> {number}")
 
-            # make result string
-            string = str(self.number)
-            # get integer part
-            num_int = str(int(self.number))
-
-            # get decimal part and adjust size and cut some decimal point to avoid text is going out of display
-            # eg) if number was 3.33333333333333333 and exceeding the display then cut some decimal parts and become
-            # 3.3333333 maybe
-            num_decimal = string[len(str(num_int)): 12]
-            # make a number
-            self.number = float(num_int + num_decimal)
-            self.ui.display_textLine.setText(str(self.number))
-            return
-
-        # you cannot input infinite number
-        if len(str(self.number)) > 10:
-            return
-
-        # If afterEqual then first clear number
-        if self.afterEqual:
-            self.number = 0
-            self.afterEqual = False
-
-        # This is normal operation. Just multiply previous value by 10 and add inputted value.
-        # Eg) number = 123, 3 was inputted, 123 * 10 + 3 = 1233
         self.number = self.number * 10 + number
-        self.ui.display_textLine.setText(str(self.number))
+        self.update_number()
+        self.print_inside()
+
 
     # Just reverse sign, Positive becomes negative, negative becomes positive
     def reverseSign(self):
-        self.number *= -1
-        self.ui.display_textLine.setText(str(self.number))
+        print("reverseSign")
+        self.print_inside()
 
     # Clear all
     def allClear_display(self):
-        self.number = 0
-        self.subLine_number = 0
-        self.subline_action = None
-        self.ui.display_textLine.setText("0")
-        self.ui.display_textSubLine.setText("")
-        self.decimal_on = False
-        self.afterEqual = True
+        print("allClear_display")
+        self.print_inside()
 
     # Clear only number and display
     def clear_display(self):
-        self.number = 0
-        self.ui.display_textLine.setText("0")
-        self.afterEqual = True
+        print("clear_display")
+        self.print_inside()
 
     # Add decimal point and go into decimal mode.
     def decimal_clicked(self):
         # Prevent user from inputting multiple decimal points Eg) 23....... No! 23. <= cannot put more dots
-        if "." in self.ui.display_textLine.text():
-            return
-        self.decimal_on = True
-        self.ui.display_textLine.setText(self.ui.display_textLine.text() + ".")
+        print("decimal_clicked")
+        self.print_inside()
 
     # Calculate answer
     def equal_pressed(self):
@@ -146,75 +119,16 @@ class Ui_Functions():
         #   Next number input will clear display and shows that number
         # After Equal : main display : 7 (This is answer from previous calculation)
         #       4 is clicked, main display become 4, not 74, because it clears 7 and insert 4 (see keypad_pressed)
-        if self.subline_action is not None:
-            # Get operator and calculate
-            if self.subline_action == "+":
-                self.number += self.subLine_number
-            elif self.subline_action == "-":
-                self.number = self.subLine_number - self.number
-            elif self.subline_action == "*":
-                self.number *= self.subLine_number
-            elif self.subline_action == "/":
-                self.number = self.subLine_number / self.number
-
-            # check for decimal number
-            # if answer was 1.0 then make it 1
-            if int(self.number) == self.number:
-                self.number = int(self.number)
-            # if answer exceeds display range then cut some decimal numbers.
-            # 3.333333333333333 becomes 3.3333333333, more than 12 letter will be cut
-            else:
-                string = str(self.number)
-                num_int = str(int(self.number))
-                # This 12 defines the length of output
-                num_decimal = string[len(str(num_int)): 12]
-                self.number = float(num_int + num_decimal)
-            print(self.number)
-            # Clear sub display and insert answer to main display
-            self.ui.display_textSubLine.setText("")
-            self.ui.display_textLine.setText(str(self.number))
-            self.subline_action = None
-            # AfterEqual is on so next input will clear the answer shown in the display
-            self.afterEqual = True
-            self.decimal_on = False
+        print("equal_pressed")
+        self.print_inside()
 
     def calcButton_pressed(self, action):
         # if operator is saved in subline_action then calculate that equation and update sub display
         # sub display shows 3+ and 4 is in main display then + is clicked,
         #       ->>>>> sub display become 7+ and main display becomes 0
-        if self.subline_action is not None:
-            if self.subline_action == "+":
-                self.subLine_number += self.number
-            elif self.subline_action == "-":
-                self.subLine_number -= self.number
-            elif self.subline_action == "*":
-                self.subLine_number *= self.number
-            elif self.subline_action == "/":
-                self.subLine_number /= self.number
-                if int(self.subLine_number) == self.subLine_number:
-                    self.subLine_number = int(self.subLine_number)
+        print("calcButton_pressed -> " + action)
 
-            self.ui.display_textSubLine.setText(str(self.subLine_number) + self.subline_action)
-            self.number = 0
-            self.ui.display_textLine.setText(str(self.number))
-
-        # if no operator is saved then make sub_number number and let the main display ready for next input
-        # Sub display is empty and main display shows 4 maybe, then + is clicked,
-        # Sub display will show 4+ and main display will become 0
-        else:
-            self.subLine_number = self.number
-        if action == "add":
-            self.subline_action = "+"
-        elif action == "substract":
-            self.subline_action = "-"
-        elif action == "multi":
-            self.subline_action = "*"
-        elif action == "divide":
-            self.subline_action = "/"
-        self.ui.display_textSubLine.setText(str(self.subLine_number) + self.subline_action)
-        self.number = 0
-        self.ui.display_textLine.setText(str(self.number))
-        self.decimal_on = False
+        self.print_inside()
 
 
 
