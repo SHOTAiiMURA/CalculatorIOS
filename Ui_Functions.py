@@ -97,6 +97,20 @@ class Ui_Functions():
     # Clear all
     def allClear_display(self):
         print("allClear_display")
+        self.number = 0
+        # it saves number after operator button is pressed. This number will be shown to the sub display above the main
+        # diaplay
+        self.subline_number = 0
+
+        # it saves previous operator action
+        self.subLine_action = None
+
+        # When this afterEqual is on and if any keypad is pressed,
+        # first clears the display and then add that keypad number.
+        self.afterEqual = True
+        self.ui.display_textSubLine.setText(" ")
+        self.ui.display_textLine.setText("0")
+
         self.print_inside()
 
     # Clear only number and display
