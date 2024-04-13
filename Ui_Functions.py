@@ -114,16 +114,16 @@ class Ui_Functions():
     def equal_pressed(self):
         # ユーザーが等号の前にoperatorのボタンを押したことを確認する。=　オペレータがNONEではない
         #ユーザが+や-などのoperatrorを入力していない場合, # self.subline_actionはNoneとなる.
-        if self.subLine_actionine_action != None:
+        if self.subline_action != None:
         # サブディスプレイに3+ or - or * or /が表示され、メインディスプレイに4が表示され、 =がクリックされた場合、
-            if self.subLine_action == "+":
-                self.subline_number += self.number
-            elif self.subLine_action == "-":
-                self.subline_number -= self.number
-            elif self.subLine_action == "*":
-                self.ubline_number *= self.number
-            elif self.subLine_action == "/":
-                self.subline_number /= self.number
+            if self.subline_action == "+":
+                self.subLine_number += self.number
+            elif self.subline_action == "-":
+                self.subLine_number -= self.number
+            elif self.subline_action == "*":
+                self.subLine_number *= self.number
+            elif self.subline_action == "/":
+                self.subLine_number /= self.number
 
         # サブ表示が空になり, メイン表示が7になる.
         # 次に入力された数字がクリアされ、その数字が表示される
@@ -137,15 +137,15 @@ class Ui_Functions():
         # もしoperatorがsubline_actionに保存されていれば、その方程式を計算し、サブディスプレイを更新する。
         # sub displayには3+が表示され、main displayには4が表示される、
         # sub display は7+となり、main displayは0となる。
-        if self.subLine_action != None:
+        if self.subline_action != None:
             if self.subLine_action == "+":
-                self.subline_number += self.number
-            elif self.subLine_action == "-":
-                self.subline_number -= self.number
-            elif self.subLine_action == "*":
-                self.subline_number *= self.number
-            elif self.subLine_action == "/":
-                self.subline_number /= self.number
+                self.subLine_number += self.number
+            elif self.subline_action == "-":
+                self.subLine_number -= self.number
+            elif self.subline_action == "*":
+                self.subLine_number *= self.number
+            elif self.subline_action == "/":
+                self.subLine_number /= self.number
 
         else:
             self.subLine_number = self.number
