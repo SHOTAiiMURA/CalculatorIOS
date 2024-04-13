@@ -112,21 +112,31 @@ class Ui_Functions():
 
     # Calculate answer
     def equal_pressed(self):
-        # Make sure user pressed one of operator button before the equal.
-        # self.subline_action is None if user did not input one of operator like + or -
-        # sub display shows 3+ and 4 is in main display then = is clicked,
-        #       ->>>>> sub display become empty and main display becomes 7
-        #   Next number input will clear display and shows that number
-        # After Equal : main display : 7 (This is answer from previous calculation)
-        #       4 is clicked, main display become 4, not 74, because it clears 7 and insert 4 (see keypad_pressed)
+        # ユーザーが等号の前にoperatorのボタンを押したことを確認する。=　オペレータがNONEではない
+        #ユーザが+や-などのoperatrorを入力していない場合, # self.subline_actionはNoneとなる.
+        if self.subline_action != None:
+        # サブディスプレイに3+ or - or * or /が表示され、メインディスプレイに4が表示され、 =がクリックされた場合、
+            if self.subline_action == "+":
+                self.subline_number += self.number
+            elif self.subline_action == "-":
+                self.subline_number -= self.number
+            elif self.subline_action == "*":
+                self.subline_number *= self.number
+            elif self.subline_action == "/":
+                self.subline_number /= self.number
+
+        # サブ表示が空になり, メイン表示が7になる.
+        # 次に入力された数字がクリアされ、その数字が表示される
+        # イコールの後: メインディスプレイ: 7 (これは前の計算の答え)
+        # 4 がクリックされると、メインディスプレイは 74 ではなく 4 になる。
+
         print("equal_pressed")
         self.print_inside()
 
     def calcButton_pressed(self, action):
-        # if operator is saved in subline_action then calculate that equation and update sub display
-        # sub display shows 3+ and 4 is in main display then + is clicked,
-        #       ->>>>> sub display become 7+ and main display becomes 0
-        print("calcButton_pressed -> " + action)
+        # もし演算子がsubline_actionに保存されていれば、その方程式を計算し、サブディスプレイを更新する。
+        # sub displayには3+が表示され、main displayには4が表示される、
+        # sub display は7+となり、main displayは0となる。
 
         self.print_inside()
 
