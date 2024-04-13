@@ -68,8 +68,8 @@ class Ui_Functions():
 
     def print_inside(self):
         print(f"self.number -> {self.number}")
-        print(f"self.subLine_number -> {self.subLine_number}")
-        print(f"self.subline_action -> {self.subline_action}")
+        print(f"self.subline_number -> {self.subline_number}")
+        print(f"self.subLine_action -> {self.subLine_action}")
     #######################
     # functions for slots
     #######################
@@ -114,21 +114,29 @@ class Ui_Functions():
     def equal_pressed(self):
         # ユーザーが等号の前にoperatorのボタンを押したことを確認する。=　オペレータがNONEではない
         #ユーザが+や-などのoperatrorを入力していない場合, # self.subline_actionはNoneとなる.
-        if self.subline_action != None:
+        if self.subLine_action != None:
         # サブディスプレイに3+ or - or * or /が表示され、メインディスプレイに4が表示され、 =がクリックされた場合、
-            if self.subline_action == "+":
-                self.subLine_number += self.number
-            elif self.subline_action == "-":
-                self.subLine_number -= self.number
-            elif self.subline_action == "*":
-                self.subLine_number *= self.number
-            elif self.subline_action == "/":
-                self.subLine_number /= self.number
+            if self.subLine_action == "+":
+                self.number += self.subline_number
+            elif self.subLine_action == "-":
+                self.number -= self.subline_number
+            elif self.subLine_action == "*":
+                self.number *= self.subline_number
+            elif self.subLine_action == "/":
+                self.number /= self.subline_number
 
-        # サブ表示が空になり, メイン表示が7になる.
+
+        # sub diplay表示が空になり, main display表示が7になる.
+        self.ui.display_textSubLine.setText(" ")
+
         # 次に入力された数字がクリアされ、その数字が表示される
         # イコールの後: メインディスプレイ: 7 (これは前の計算の答え)
+        self.ui.display_textLine.setText(str(self.number))
         # 4 がクリックされると、メインディスプレイは 74 ではなく 4 になる。
+
+        self.subLine_action = None
+        self.afterEqual = True
+
 
 
         self.print_inside()
@@ -137,26 +145,35 @@ class Ui_Functions():
         # もしoperatorがsubline_actionに保存されていれば、その方程式を計算し、サブディスプレイを更新する。
         # sub displayには3+が表示され、main displayには4が表示される、
         # sub display は7+となり、main displayは0となる。
-        if self.subline_action != None:
-            if self.subLine_action == "+":
-                self.subLine_number += self.number
-            elif self.subline_action == "-":
-                self.subLine_number -= self.number
-            elif self.subline_action == "*":
-                self.subLine_number *= self.number
-            elif self.subline_action == "/":
-                self.subLine_number /= self.number
+        if self.subLine_action != None:
+            if self.subline_action == "+":
+                self.number += self.subline_number
+            elif self.subLine_action == "-":
+                self.number -= self.subline_number
+            elif self.subLine_action == "*":
+                self.number *= self.subline_number
+            elif self.subLine_action == "/":
+                self.number /= self.subline_number
+
+
+            self.ui.display_textSubLine.setText(str(self.subline_number) + self.subLine_action)
+            self.number = 0
+            self.ui.display_textLine.setText(str(self.number))
 
         else:
-            self.subLine_number = self.number
+            self.subline_number = self.number
         if action == "add":
-            self.subline_action = "+"
+            self.subLine_action = "+"
         elif action == "substract":
-            self.subline_action = "-"
+            self.subLine_action = "-"
         elif action == "multi":
-            self.subline_action = "*"
+            self.subLine_action = "*"
         elif action == "divide":
-            self.subline_action = "/"
+            self.subLine_action = "/"
+
+        self.ui.display_textSubLine.setText(str(self.subline_number) + self.subLine_action)
+        self.number = 0
+        self.ui.display_textLine.setText(str(self.number))
 
         self.print_inside()
 
