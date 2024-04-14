@@ -150,7 +150,10 @@ class Ui_Functions():
                 self.number *= self.subline_number
             elif self.subLine_action == "/":
                 self.number = self.subline_number / self.number
+                if self.number.is_integer():
+                    result = int(self.number)
 
+                return self.number
 
         # sub diplay表示が空になり, main display表示が7になる.
         self.ui.display_textSubLine.setText(" ")
