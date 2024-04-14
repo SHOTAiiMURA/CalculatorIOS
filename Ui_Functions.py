@@ -153,13 +153,19 @@ class Ui_Functions():
             #wanna make 2 not 2.0
             if self.number.is_integer():
                 self.number = int(self.number)
-        # sub diplay表示が空になり, main display表示が7になる.
-            return self.ui.display_textSubLine.setText(" ")
 
-        # 次に入力された数字がクリアされ、その数字が表示される
-        # イコールの後: メインディスプレイ: 7 (これは前の計算の答え)
+            else:
+            # 小数点以下を12桁で切る
+                self.number = round(self.number, 12)
+
+            print(self.number)
+            # sub diplay表示が空になり, main display表示が7になる.
+            self.ui.display_textSubLine.setText(" ")
+
+            # 次に入力された数字がクリアされ、その数字が表示される
+            # イコールの後: メインディスプレイ: 7 (これは前の計算の答え)
             self.ui.display_textLine.setText(str(self.number))
-        # 4 がクリックされると、メインディスプレイは 74 ではなく 4 になる。
+            # 4 がクリックされると、メインディスプレイは 74 ではなく 4 になる。
 
             self.subLine_action = None
             self.afterEqual = True
