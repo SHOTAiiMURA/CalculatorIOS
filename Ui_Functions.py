@@ -130,8 +130,11 @@ class Ui_Functions():
                 self.decimal_on = True
             # add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
         else:
-                self.decimal_on = False
-        self.print_inside()
+            return
+            self.decimal_on = False
+
+
+            self.print_inside()
 
     # Calculate answer
     def equal_pressed(self):
