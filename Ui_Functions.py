@@ -125,7 +125,7 @@ class Ui_Functions():
         # Prevent user from inputting multiple decimal points Eg) 23....... No! 23. <= cannot put more dots
         #もし小数点が一回だけ有効なとき、リターン、デシモルをTrue
         decimal_count = False
-        def enter_decimal():
+        if self.decimal_on:
             global decimal_count
             if not decimal_count:
                 print(".")
