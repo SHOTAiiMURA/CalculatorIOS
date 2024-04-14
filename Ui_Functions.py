@@ -142,11 +142,11 @@ class Ui_Functions():
             if self.subLine_action == "+":
                 self.number += self.subline_number
             elif self.subLine_action == "-":
-                self.number -= self.subline_number
+                self.number = self.subline_number - self.number
             elif self.subLine_action == "*":
                 self.number *= self.subline_number
             elif self.subLine_action == "/":
-                self.number /= self.subline_number
+                self.number = self.subline_number / self.number
 
 
         # sub diplay表示が空になり, main display表示が7になる.
@@ -172,11 +172,11 @@ class Ui_Functions():
             if self.subline_action == "+":
                 self.number += self.subline_number
             elif self.subLine_action == "-":
-                self.number -= self.subline_number
+                self.number = self.subline_number - self.numer
             elif self.subLine_action == "*":
                 self.number *= self.subline_number
             elif self.subLine_action == "/":
-                self.number /= self.subline_number
+                self.number = self.subline_number / self.number
 
 
             self.ui.display_textSubLine.setText(str(self.subline_number) + self.subLine_action)
