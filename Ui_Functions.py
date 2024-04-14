@@ -126,10 +126,11 @@ class Ui_Functions():
         #もし小数点が一回だけ有効なとき、リターン、デシモルをTrue
         self.decimal_on = True
         if self.decimal_on:
+            # add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
             self.ui.display_textLine.setText(self.ui.display_textLine.text()+".")
-            self.decimal_on = False
+            #self.decimal_on = False
 
-        #add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
+
         self.print_inside()
 
     # Calculate answer
