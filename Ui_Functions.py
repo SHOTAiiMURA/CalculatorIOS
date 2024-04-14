@@ -150,23 +150,19 @@ class Ui_Functions():
                 self.number *= self.subline_number
             elif self.subLine_action == "/":
                 self.number = self.subline_number / self.number
-                if self.number.is_integer():
-                    result = int(self.number)
-
-                return self.number
-
+            #wanna make 2 not 2.0
+            if self.number.is_integer():
+                self.number = int(self.number)
         # sub diplay表示が空になり, main display表示が7になる.
-        self.ui.display_textSubLine.setText(" ")
+            return self.ui.display_textSubLine.setText(" ")
 
         # 次に入力された数字がクリアされ、その数字が表示される
         # イコールの後: メインディスプレイ: 7 (これは前の計算の答え)
-        self.ui.display_textLine.setText(str(self.number))
+            self.ui.display_textLine.setText(str(self.number))
         # 4 がクリックされると、メインディスプレイは 74 ではなく 4 になる。
 
-        self.subLine_action = None
-        self.afterEqual = True
-
-
+            self.subLine_action = None
+            self.afterEqual = True
 
         self.print_inside()
 
