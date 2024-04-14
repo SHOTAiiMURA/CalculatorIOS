@@ -98,11 +98,10 @@ class Ui_Functions():
     def allClear_display(self):
         print("allClear_display")
         self.number = 0
-        # it saves number after operator button is pressed. This number will be shown to the sub display above the main
-        # diaplay
+
         self.subline_number = 0
 
-        # it saves previous operator action
+
         self.subLine_action = None
 
         # When this afterEqual is on and if any keypad is pressed,
@@ -116,12 +115,17 @@ class Ui_Functions():
     # Clear only number and display
     def clear_display(self):
         print("clear_display")
+        self.number = 0
+        self.ui.display_textLine.setText("0")
+        self.afterEqual = True
         self.print_inside()
 
     # Add decimal point and go into decimal mode.
     def decimal_clicked(self):
         # Prevent user from inputting multiple decimal points Eg) 23....... No! 23. <= cannot put more dots
-        print("decimal_clicked")
+        #もし小数点が一回だけ有効なとき、リターン、デシモルをTrue
+
+        #add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
         self.print_inside()
 
     # Calculate answer
