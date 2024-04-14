@@ -124,6 +124,10 @@ class Ui_Functions():
     def decimal_clicked(self):
         # Prevent user from inputting multiple decimal points Eg) 23....... No! 23. <= cannot put more dots
         #もし小数点が一回だけ有効なとき、リターン、デシモルをTrue
+        self.decimal_on = True
+        if self.decimal_on:
+            print(".")
+            self.decimal_on = False
 
         #add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
         self.print_inside()
