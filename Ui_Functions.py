@@ -128,7 +128,10 @@ class Ui_Functions():
         if self.decimal_on:
             # add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
             self.ui.display_textLine.setText(self.ui.display_textLine.text()+".")
-            #self.decimal_on = False
+
+        else:
+            if self.decimal_on:
+                self.ui.display_textLine.setText(self.ui.display_textLine.text())
 
 
         self.print_inside()
