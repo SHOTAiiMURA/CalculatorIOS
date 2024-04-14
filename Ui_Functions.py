@@ -121,19 +121,16 @@ class Ui_Functions():
         self.print_inside()
 
     # Add decimal point and go into decimal mode.
-    def decimal_clicked(self,decimal_count):
+    def decimal_clicked(self):
         # Prevent user from inputting multiple decimal points Eg) 23....... No! 23. <= cannot put more dots
         #もし小数点が一回だけ有効なとき、リターン、デシモルをTrue
-        decimal_count = False
-        def decimal_count():
-            global decimal_count
-            if not decimal_count:
+            #global self.decimal_on
+        if not self.decimal_on:
                 self.ui.display_textLine.setText(self.ui.display_textLine.text()+".")
-                decimal_count = True
+                self.decimal_on = True
             # add into text: self.ui.display_textLine.setText(**wanna display desicmal besids main number
-
-
-
+        else:
+                self.decimal_on = False
         self.print_inside()
 
     # Calculate answer
