@@ -92,6 +92,9 @@ class Ui_Functions():
     # Just reverse sign, Positive becomes negative, negative becomes positive
     def reverseSign(self):
         print("reverseSign")
+        # wanna make integer negative. if
+
+        # wanna make integer positive when its negative
         self.print_inside()
 
     # Clear all
@@ -155,8 +158,8 @@ class Ui_Functions():
                 self.number = int(self.number)
 
             else:
-            # 小数点以下を12桁で切る
-                self.number = round(self.number, 8)
+            # 小数点以下を6桁で切る
+                self.number = round(self.number, 6)
 
                 print(self.number)
             # sub diplay表示が空になり, main display表示が7になる.
