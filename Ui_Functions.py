@@ -156,9 +156,9 @@ class Ui_Functions():
 
             else:
             # 小数点以下を12桁で切る
-                self.number = round(self.number, 12)
+                self.number = round(self.number, 8)
 
-            print(self.number)
+                print(self.number)
             # sub diplay表示が空になり, main display表示が7になる.
             self.ui.display_textSubLine.setText(" ")
 
