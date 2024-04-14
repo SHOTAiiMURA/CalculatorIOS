@@ -92,9 +92,14 @@ class Ui_Functions():
     # Just reverse sign, Positive becomes negative, negative becomes positive
     def reverseSign(self):
         print("reverseSign")
-        # wanna make integer negative. if
-
+        # wanna make integer negative. if x * -1 = -x
+        if self.number * -1:
+            self.ui.display_textLine.setText(str(self.number))
         # wanna make integer positive when its negative
+        else:
+            self.number * -1
+            return
+        self.ui.display_textLine.setText(str(self.number))
         self.print_inside()
 
     # Clear all
