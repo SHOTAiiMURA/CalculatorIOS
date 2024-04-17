@@ -17,8 +17,9 @@ Developers have to install Pycharm in order to launch application. You install p
 ![Calculator_qt](https://user-images.githubusercontent.com/71058334/127102818-616208d1-954f-4d62-9933-0f49dfa69d81.PNG)
 
 2. The color changes when the cursor is moved over the button.
-3. The numbers previously typed were displayed above the numbers shown on the main display.
-
+   ### INSERT GIF
+4. The numbers previously typed were displayed above the numbers shown on the main display.
+   ### INSERT GIF
 ## Key Programming Idea
 - avoiding infinite number
 - When the calculation is finished and the next number is entered, the previous number is automatically deleted.
