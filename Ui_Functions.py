@@ -87,7 +87,7 @@ class Ui_Functions():
         if self.decimal_on:
         #number with decimal has to be text
             decimal_string = self.ui.display_textLine.text()
-            print(decimal_string+str(number))
+            print(decimal_string)
 
         #then add number after .
         #append number
