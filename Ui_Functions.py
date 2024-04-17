@@ -83,6 +83,28 @@ class Ui_Functions():
     # Define actions when one of keypad is pressed.
     def keypad_pressed(self, number):
         print(f"keypad_pressed -> {number}")
+        #if decimal are typed
+        if self.decimal_on:
+        #number with decimal has to be text
+            decimal_string = self.ui.display_textLine.text()
+            print(decimal_string+str(number))
+
+        #then add number after .
+        #append number
+            decimal_number = decimal_string + str(number)
+            print(decimal_number)
+
+        #wanna make number with decimal being unchangeble.???
+            #self.decimal_on = False
+            self.ui.display_textLine.setText(str(self.number))
+        #user cannot input infiniti number. restrict until 10 digit
+        if len(str(self.number)) > 9:
+            return
+
+        #clear number after equal of answer
+        if self.afterEqual:
+            self.number = 0
+            self.afterEqual = False
 
         self.number = self.number * 10 + number
         self.update_number()
@@ -156,7 +178,7 @@ class Ui_Functions():
             elif self.subLine_action == "/":
                 self.number = self.subline_number / self.number
             #wanna make 2 not 2.0
-            if self.number.is_integer():
+            if int(self.number) == self.number:
                 self.number = int(self.number)
 
             else:
