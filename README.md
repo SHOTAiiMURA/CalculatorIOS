@@ -1,7 +1,7 @@
 # Calculator App
 
 ## Requirement
--Python
+-Python 3
 ## External Library
 -Qtdesigner
 ## Introduction
@@ -20,11 +20,11 @@ Developers have to install Pycharm in order to launch application. You install p
 3. The numbers previously typed were displayed above the numbers shown on the main display.
 
 ## Key Programming Idea
-  
+- avoiding infinite number
+- When the calculation is finished and the next number is entered, the previous number is automatically deleted.
 ## Future Improvement
-
+  This was my first time using GUI and Python to create an application. I created the calculator in a few hours. This time I implemented only simple four math functions. In my next project, I would like to implement a calculator that can perform calculations, adding root calculations and statistical calculations to the calculator. Also, I would like to add a split function, which is not available in the iPhone calculator, and a tip calculation function, which would be useful when traveling abroad.
 ## Impression
-
-
+  When I wrote the Python code, I wrote it using conditional processing. Since it was only a function of basic computation, it was not difficult to write codes. However, there was one problem that took me some time to solve: when I input a decimal point, the number was displayed on the console, but not on the calculator display. In conclusion, this project made me realize how great and fun the GUI is and inspired me to create more projects using it.
 
 
