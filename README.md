@@ -22,7 +22,9 @@ Developers have to install Pycharm in order to launch application. You install p
    ### INSERT GIF
 ## Key Programming Idea
 - avoiding infinite number
+   ### INSERT GIF
 - When the calculation is finished and the next number is entered, the previous number is automatically deleted.
+     ### INSERT GIF
 ## Future Improvement
   This was my first time using GUI and Python to create an application. I created the calculator in a few hours. This time I implemented only simple four math functions. In my next project, I would like to implement a calculator that can perform calculations, adding root calculations and statistical calculations to the calculator. Also, I would like to add a split function, which is not available in the iPhone calculator, and a tip calculation function, which would be useful when traveling abroad.
 ## Impression
