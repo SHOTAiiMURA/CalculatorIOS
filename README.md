@@ -20,20 +20,15 @@ Developers have to install Pycharm in order to launch application. You install p
 
 https://github.com/SHOTAiiMURA/CalculatorIOS/assets/91776514/e2c0e51c-fbe3-4cb4-9d18-026745487f13
   
-3. The numbers previously typed were displayed above the n
+3. The numbers previously typed were displayed above the numbers shown on the main display.
 
 
 https://github.com/SHOTAiiMURA/CalculatorIOS/assets/91776514/75643909-206c-41b6-bb6f-610d67ecb0fc
 
-
-
-umbers shown on the main display.
-   ### INSERT GIF
 ## Key Programming Idea
 - avoiding infinite number
-   ### INSERT GIF
 - When the calculation is finished and the next number is entered, the previous number is automatically deleted.
-     ### INSERT GIF
+- 
 ## Future Improvement
   This was my first time using GUI and Python to create an application. I created the calculator in a few hours. This time I implemented only simple four math functions. In my next project, I would like to implement a calculator that can perform calculations, adding root calculations and statistical calculations to the calculator. Also, I would like to add a split function, which is not available in the iPhone calculator, and a tip calculation function, which would be useful when traveling abroad.
 ## Impression
