@@ -17,10 +17,15 @@ Developers have to install Pycharm in order to launch application. You install p
 ![Calculator_qt](https://user-images.githubusercontent.com/71058334/127102818-616208d1-954f-4d62-9933-0f49dfa69d81.PNG)
 
 2. The color changes when the cursor is moved over the button.
-   
-4. The numbers previously typed were displayed above the n
 
-![Calculator_qt](https://github.com/SHOTAiiMURA/CalculatorIOS/assets/91776514/f918bff4-d558-4fa3-878f-816d5919deb8)
+https://github.com/SHOTAiiMURA/CalculatorIOS/assets/91776514/e2c0e51c-fbe3-4cb4-9d18-026745487f13
+  
+3. The numbers previously typed were displayed above the n
+
+
+https://github.com/SHOTAiiMURA/CalculatorIOS/assets/91776514/75643909-206c-41b6-bb6f-610d67ecb0fc
+
+
 
 umbers shown on the main display.
    ### INSERT GIF
